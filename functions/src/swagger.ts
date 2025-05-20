@@ -9,13 +9,13 @@ const swaggerSpec = swaggerJsdoc({
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Simulation Game API",
+      title: "별 따라 안전운전 Game API",
       version: "1.0.0",
       description: "프로토타입 API 문서",
     },
     servers: [
       {url: "http://localhost:5001/starfish-e4df9/us-central1/api"}, // 로컬 emulator용 주소
-      // { url: `https://us-central1-${process.env.GCLOUD_PROJECT}.cloudfunctions.net/api` }, // 배포 주소
+      {url: "https://api-yfsqy624bq-uc.a.run.app" }, // 배포 주소
     ],
   },
   // apis: ['./src/routes/*.ts'],
