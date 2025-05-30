@@ -34,11 +34,16 @@ const router = Router({mergeParams: true});
  *         description: 등록된 attempt ID
  */
 router.post("/:quest_id/attempts", async (req: Request<AttemptParams>, res: Response) => {
-  const sessionId = Number(req.params.session_id);
-  const questId = Number(req.params.quest_id);
+  const sessionId = req.params.session_id;
+  const questId = req.params.quest_id;
   const {attempt_number, score_awarded, selected_option, is_correct, response_time} = req.body;
   const now = admin.firestore.Timestamp.now();
   const ref = await db.collection("attempts").add({session_id: sessionId, quest_id: questId, attempt_number, score_awarded, selected_option, is_correct, response_time, timestamp: now});
+
+  // + 세션에 점수 누적
+  await db.collection("sessions").doc(sessionId).update({
+    total_score: admin.firestore.FieldValue.increment(score_awarded),
+  });
   return res.json({attempt_id: ref.id});
 });
 
