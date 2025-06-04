@@ -14,7 +14,7 @@ const swaggerSpec = swaggerJsdoc({
       description: "프로토타입 API 문서",
     },
     servers: [
-      //{url: "http://localhost:5001/starfish-e4df9/us-central1/api"}, // 로컬 emulator용 주소
+      {url: "http://localhost:5001/starfish-e4df9/us-central1/api"}, // 로컬 emulator용 주소
       {url: "https://api-yfsqy624bq-uc.a.run.app" }, // 배포 주소
     ],
   },
