@@ -20,6 +20,8 @@ const router = Router();
  *               phone: { type: string }
  *               age: { type: integer }
  *               village_id: { type: string }
+ *               session_id: { type: string }
+ *               score: { type: integer}
  *     responses:
  *       200:
  *         description: 생성된 유저
