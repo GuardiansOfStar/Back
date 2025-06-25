@@ -16,6 +16,7 @@ Firebase Functions 기반으로 구현되어 있으며, Firestore를 활용한 �
 ---
 
 ## ⚙️ 프로젝트 구조
+'''
 ├── functions/                  # Firebase Functions 소스
 │   ├── src/
 │   │   ├── index.ts            # Firebase Functions 진입점
@@ -26,6 +27,7 @@ Firebase Functions 기반으로 구현되어 있으며, Firestore를 활용한 �
 │   │   └── swagger.ts          # Swagger 설정
 │   └── package.json            # 의존성 및 스크립트
 └── README.md
+'''
 
 
 ---
